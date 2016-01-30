@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>flex布局——骰子布局</title>
+		<style type="text/css">
+			.main {
+				width: 1000px;
+				height: 200px;
+				margin: 100px auto;
+				background: rgb(35, 35, 35);
+				border-radius: 10px;
+				box-shadow: 2px 2px #000;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.flex-container{
+				width: 100px;
+				height: 100px;
+				background: #fff;
+				border-radius: 10px;
+				box-shadow: -5px -5px #525252;
+				display: flex;
+			}
+			.flex-item{
+				width: 24px;
+				height: 24px;
+				background: rgb(35, 35, 35);
+				display: inline-block;
+				border-radius: 12px;
+				margin: 5px;
+			}
+			.one {
+				justify-content: center;
+				align-items: center;
+			}
+			.two {
+				justify-content: space-between;
+			}
+			.two .flex-item:nth-child(2) {
+				align-self: flex-end;
+			}
+			.three {
+				justify-content: space-between;
+			}
+			.three .flex-item:nth-child(2) {
+				align-self: center;
+			}
+			.three .flex-item:nth-child(3) {
+				align-self: flex-end;
+			}
+			.four,.six,.five {
+				justify-content: space-between;
+			}
+			.column {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			.five .column:nth-child(2) {
+				justify-content: center;
+			}
+		</style>  
+	</head>
+	<body>
+		<div class="main">
+			<div class="flex-container one">
+				<span class="flex-item"></span>
+			</div>
+			<div class="flex-container two">
+				<span class="flex-item"></span>
+				<span class="flex-item"></span>
+			</div>
+			<div class="flex-container three">
+				<span class="flex-item"></span>
+				<span class="flex-item"></span>
+				<span class="flex-item"></span>
+			</div>
+			<div class="flex-container four">
+				<div class="column">
+					<span class="flex-item"></span>
+					<span class="flex-item"></span>
+				</div>
+				<div class="column">
+					<span class="flex-item"></span>
+					<span class="flex-item"></span>
+				</div>
+			</div>
+			<div class="flex-container five">
+				<div class="column">
+					<span class="flex-item"></span>
+					<span class="flex-item"></span>
+				</div>
+				<div class="column">
+					<span class="flex-item"></span>
+				</div>
+				<div class="column">
+					<span class="flex-item"></span>
+					<span class="flex-item"></span>
+				</div>
+			</div>
+			<div class="flex-container six">
+				<div class="column">
+					<span class="flex-item"></span>
+					<span class="flex-item"></span>
+					<span class="flex-item"></span>
+				</div>
+				<div class="column">
+					<span class="flex-item"></span>
+					<span class="flex-item"></span>
+					<span class="flex-item"></span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
