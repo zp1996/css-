@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>flex布局——圣杯布局</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			.holy-grail {
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+			header,footer {
+				background: #aaa;
+				color: #fff;
+				font-size: 20px;
+				text-align: center;
+				line-height: 10vh;
+				flex: 1;
+			}
+			.grail-body {
+				display: flex;
+				flex: 1;
+				min-height: 80vh;
+				text-align: center;
+				line-height: 80vh;
+				font-size: 20px;
+				color: #443939;
+			}
+			.body-content {
+				flex: 1;
+			}
+			.body-nav,.body-aside {
+				flex: 0 0 15vw;
+			}
+			.body-nav {
+				background: rgb(119, 187, 221);
+			}
+			.body-aside {
+				background: rgb(255, 102, 51); 
+			}
+		</style>
+	</head>
+	<body class="holy-grail">
+		<header>
+			#header
+		</header>
+		<div class="grail-body">
+			<nav class="body-nav">导航</nav>
+			<main class="body-content">圣杯布局（Holy Grail Layout）指的是一种最常见的网站布局</main>
+			<aside class="body-aside">文章侧栏</aside>
+		</div>
+		<footer>#footer</footer>
+	</body>
+</html>
