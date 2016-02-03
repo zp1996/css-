@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>实现彩虹条</title>
+		<meta charset="utf-8" />
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			.first-way,.second-way {
+				width: 500px;
+				position: absolute;
+				top: 10px;
+			}
+			.first-way {
+				left: 20px;
+			}
+			.second-way {
+				right: 20px;
+			}
+			.first-one {
+				background: red;
+				height: 350px;
+			}
+			.first-two {
+				background: green;
+				height: 210px;
+				margin-top: -280px;
+			}
+			.first-three {
+				background: blue;
+				height: 70px;
+				margin-top: -140px;
+			}
+			.second-one,.second-three {
+				height: 70px;
+				background: green;
+				position: relative;
+			}
+			.second-one {
+				margin-top: 70px;
+			}
+			.second-two {
+				background: blue;
+				height: 70px;
+			}
+			.second-one::before, .second-three::after {
+				/* 注意伪元素是行内元素 */
+				display: block;
+				content: "";
+				background: red;
+				width: 500px;
+				height: 70px;
+				position: absolute;
+			}
+			.second-one::before {
+				top: -70px;
+			}
+			.second-three::after {
+				top: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="first-way">
+			<h3>利用margin塌陷法实现</h3>
+			<div class="first-one"></div>
+			<div class="first-two"></div>
+			<div class="first-three"></div>
+		</div>
+		<div class="second-way">
+			<h3>利用伪元素法实现</h3>
+			<div class="second-one"></div>
+			<div class="second-two"></div>
+			<div class="second-three"></div>
+		</div>
+	</body>
+</html>
