@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>三列等高的纯css实现</title>
+		<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+			.container{
+				width: 1000px;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			.left,.center,.right{
+				float: left;
+				width: 333px;
+				padding-bottom: 10000px;
+				margin-bottom: -10000px;				
+			}
+			.left{
+				background: red;
+			}
+			.center{
+				background: yellow;
+			}
+			.right{
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="left">
+				看原理-&gt;
+			</div>
+			<div class="center">
+				<strong>
+					我们需要明白的是`overflow:hidden;`是根据什么来界定的，也就是说怎么样就算超出了这个容器呢？（这里所指的是没有指定容器的高度）根据的是容易内元素的外边距，看上面的代码，我们首先给三个子`div`增加`padding-bottom`，使整个盒子的高度增加，于此同时，三个子`div`的外边距也在很远很远的位置，所以我们需要将`margin-bottom`给拿上来，于是我们就做了一个正负相抵的操作，这时我们的`right`的底部外边距与其本身`content area`在同一基线上，也是由于`right`的底部外边距的这条基线位于最底部，所以父`div`进行`overflow`后得到我们想要的三列等高效果。
+				</strong>
+			</div>
+			<div class="right">
+				&lt;-看原理
+			</div>
+		</div>
+	</body>
+</html>
